@@ -1,0 +1,27 @@
+Status "Sneakers" - E-commerce com quatro modelos de tênis diferentes, um para cada estação do ano:
+
+  1. Estrutura do projeto:
+    - Home
+      - Collections
+        - Spring
+        - Summer
+        - Fall
+        - Winter
+      - About
+      - Contact
+
+  2. Progresso:    
+    ☐ Home page
+      ☐ Header
+        ✔ NavBar @done (17/05/2023)
+          ✔ Design @done (16/05/2023)
+          ✔ Function @done (17/05/2023)
+        ☐ Cart
+          ☐ Function
+        ☐ Profile
+      ☐ Main
+        ☐ Preview de "Collections"
+    ✔ About page @done (18/05/2023)
+    ☐ Contact page
+
+
