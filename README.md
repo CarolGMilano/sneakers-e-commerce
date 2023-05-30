@@ -15,7 +15,6 @@ This is a simple responsive e-commerce project for seasonal sneakers, inspired b
 ## Features
 
 - Browse through selection of seasonal sneakers
-- Add products to your cart an
-d manage your cart
+- Add products to your cart and manage your cart
 - View product details and images
 - Add your e-mail in the company Newsletter
