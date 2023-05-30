@@ -6,6 +6,7 @@
 
 <div align="center">
   <img width="400em" src="./mobile.png"></img>
+  <img width="400em" src="./mobile2.png"></img>
 </div>
 
 This is a simple responsive e-commerce project for seasonal sneakers, inspired by a project template from [FrontEnd Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). While the initial idea was derived from the template, I have made design modifications and implemented new functionality.
