@@ -6,7 +6,7 @@ import Providers from '@/redux/provider';
 import { Metadata } from "next";
  
 export const metadata: Metadata = {
-  title: "Sneakers"
+  title: "Welcome to Sneakers"
 };
 
 const montserrat = Montserrat({

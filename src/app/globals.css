@@ -11,6 +11,6 @@
 :root {
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
-  --beige: #FFF3E2;
-  --beigeAmount: #faead3;
+  --beige: hsl(35, 100%, 94%);
+  --beigeAmount: hsl(35, 80%, 90%);
 }

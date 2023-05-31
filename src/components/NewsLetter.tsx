@@ -1,6 +1,7 @@
-import { changeMessage, changeValue, validEmail } from "@/redux/reducers/formEmail";
-import { RootState } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
+
+import { RootState } from "@/redux/store";
+import { changeMessage, changeValue, validEmail } from "@/redux/reducers/formEmail";
 
 export default function NewsLetter () {
   const dispatch = useDispatch();
@@ -23,24 +24,26 @@ export default function NewsLetter () {
   }
 
   return (
-    <div className="md:w-[500px] md:m-auto lg:pt-[50px]">
-      <h4 className="text-base pb-2 md:text-center md:pb-4">Join our community for exclusive updates and offers!</h4>
-      
-      <div className="flex flex-col gap-2 md:flex-row md:relative md:gap-0 md:justify-between">
-        <input 
-          type="email" 
-          placeholder="email@email.com" 
-          className={`p-3 rounded-lg border-2 border-black bg-transparent placeholder-zinc-400 ${!isValid && message !== "" ? "border-red-500" : "border-black"} md:w-[70%]`}
-          value={value} 
-          onChange={handleEmailChange} />
+    <footer className="bg-[--black] flex justify-center items-center py-12 w-full">
+      <div className="md:w-[500px] px-3">
+        <h4 className="text-[--beige] text-base pb-2 md:text-center md:pb-4">Join our community for exclusive updates and offers!</h4>
+        
+        <div className="flex flex-col gap-2 md:flex-row md:relative md:gap-0 md:justify-between">
+          <input 
+            className={`p-3 rounded-lg border-2 bg-transparent placeholder-zinc-400 text-[--beige] ${!isValid && message !== "" ? "border-red-500" : "border-[--beige]"} md:w-[70%]`}
+            type="email" 
+            placeholder="email@email.com" 
+            value={value} 
+            onChange={handleEmailChange} />
 
-        <span className={`text-sm ${isValid ? "text-green-500" : "text-red-500"} md:absolute md:-bottom-7 md:left-2`}>{message}</span>
-            
-        <button
-          className="p-3 rounded-lg bg-[--black] text-[--beige] md:w-[25%]"
-          onClick={() => isValidEmail()}
-        >subscribe</button>
+          <span className={`text-sm ${isValid ? "text-green-500" : "text-red-500"} md:absolute md:-bottom-7 md:left-2`}>{message}</span>
+              
+          <button
+            className="p-3 rounded-lg bg-[--beige] text-[--black] md:w-[25%]"
+            onClick={() => isValidEmail()}
+          >subscribe</button>
+        </div>
       </div>
-    </div>
+    </footer>
   )
 }

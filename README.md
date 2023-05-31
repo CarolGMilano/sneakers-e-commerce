@@ -9,7 +9,7 @@
   <img width="400em" src="./mobile-cart.png"></img>
 </div>
 
-This is a simple responsive e-commerce project for seasonal sneakers, inspired by a project template from [FrontEnd Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). While the initial idea was derived from the template, I have made design modifications and implemented new functionality.
+This is a simple responsive e-commerce project for Sneakers, inspired by a project template from [FrontEnd Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). While the initial idea was derived from the template, I have made design modifications and implemented new functionality.
 
 ## Technologies Used
 
@@ -20,7 +20,7 @@ This is a simple responsive e-commerce project for seasonal sneakers, inspired b
 
 ## Features
 
-- Browse through selection of seasonal sneakers
+- Browse through selection of two sneakers collections 
 - Add products to your cart and manage your cart
 - View product details and images
 - Add your e-mail in the company Newsletter

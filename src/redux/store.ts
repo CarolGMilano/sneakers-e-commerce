@@ -3,7 +3,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import menuSlice from "./reducers/menu";
-import sneakersSlice from "./reducers/seasons";
+import productsSlice from "./reducers/products";
 import imageDialogSlice from "./reducers/imageDialog";
 import cartSlice from "./reducers/cart";
 import formEmailSlice from "./reducers/formEmail";
@@ -11,7 +11,7 @@ import formEmailSlice from "./reducers/formEmail";
 const store = configureStore({
   reducer: {
     menu: menuSlice,
-    sneakers: sneakersSlice,
+    products: productsSlice,
     imageDialog: imageDialogSlice,
     cart: cartSlice,
     formEmail: formEmailSlice

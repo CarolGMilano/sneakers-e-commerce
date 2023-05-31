@@ -2,17 +2,20 @@
 
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
+
 import { RootState } from "@/redux/store";
 import { changeCart } from "@/redux/reducers/cart";
+import { isNotInTheCart } from "@/redux/reducers/products";
 
 import iconCart from "../../public/images/icon-cart.svg";
 import iconDelete from "../../public/images/icon-delete.svg";
-import { isNotInTheCart } from "@/redux/reducers/seasons";
 
 export default function Cart () {
   const dispatch = useDispatch();
-  let statusCart = useSelector((state: RootState) => state.cart.isOpen);
-  const cartList = useSelector((state: RootState) => state.sneakers.filter(sneaker => sneaker.inTheCart && sneaker.amount >= 1));
+  const statusCart = useSelector((state: RootState) => state.cart.isOpen);
+  const seasonsList = useSelector((state: RootState) => state.products.seasons.filter(sneaker => sneaker.inTheCart && sneaker.amount >= 1));
+  const sportsList = useSelector((state: RootState) => state.products.sports.filter(sneaker => sneaker.inTheCart && sneaker.amount >= 1));
+  const cartList = seasonsList.concat(sportsList);
   const amountCart = cartList.reduce((initial, sneaker) => initial + sneaker.amount, 0);
 
   return (
@@ -24,10 +27,17 @@ export default function Cart () {
         onClick={() => dispatch(changeCart())}
       />
 
-      {cartList.length >= 1 ? <span className="absolute top-4 right-[60px] bg-black px-[6px] text-xs rounded-full text-[--white] lg:top-12 lg:right-[80px] lg:text-sm">{ amountCart }</span> : ""}
+      {
+        cartList.length >= 1 
+          ? <span 
+              className="absolute top-4 right-[60px] bg-black px-[6px] text-xs rounded-full text-[--white] lg:top-12 lg:right-[80px] lg:text-sm">
+                { amountCart }
+            </span> 
+          : ""
+      }
 
       <div 
-        className={`absolute ${statusCart ? "block" : "hidden"} top-[108%] w-[95%] h-auto left-[50%] bg-[--beige] translate-x-[-50%] p-4 rounded-md md:w-[450px] lg:left-[70%] lg:top-[75%]`}
+        className={`absolute ${statusCart ? "block" : "hidden"} top-[108%] w-[95%] h-auto left-[50%] bg-[--beige] translate-x-[-50%] p-4 rounded-md md:w-[450px] lg:left-[70%] lg:top-[75%] z-50`}
         style={{ boxShadow: "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px" }}
       >
         <h3 className="pb-4 border-b border-gray-400 font-bold">Cart</h3>
@@ -52,7 +62,7 @@ export default function Cart () {
                   <Image 
                     src={iconDelete} 
                     alt="" 
-                    onClick={() => dispatch(isNotInTheCart(item.sneaker))}
+                    onClick={() => dispatch(isNotInTheCart({numberCollection: item.id, sneaker: item.sneaker}))}
                     className="m-2 hover:cursor-pointer" />
                 </div>
               })}

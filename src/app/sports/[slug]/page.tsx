@@ -1,17 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import { RootState } from "@/redux/store";
 import { useParams } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
+
+import { RootState } from "@/redux/store";
 import { openImageDialog } from "@/redux/reducers/imageDialog";
-import ImageDialog from "@/components/ImageDialog";
+
 import ProductInformation from "@/components/patterns/ProductInformation";
+import ImageDialog from "@/components/ImageDialog";
 
 export default function Product () {
-  const pageName = useParams();
-  const product = useSelector((state: RootState) => state.sneakers.filter((item) => item.sneaker === pageName.slug)[0]);
   const dispatch = useDispatch();
+  const pageName = useParams();
+  const product = useSelector((state: RootState) => state.products.sports.filter((item) => item.sneaker === pageName.slug)[0]);
 
   return (
     <section className="flex flex-col lg:flex-row lg:w-[1024px] lg:justify-between lg:px-5 lg:mt-14">
@@ -25,9 +27,10 @@ export default function Product () {
       </div>
 
       <ProductInformation 
+        collection={1}
         primaryColor={product.primaryColor}
         secundaryColor={product.secundaryColor}
-        season={product.sneaker}
+        sneaker={product.sneaker}
         title={product.title}
         description={product.description}
         price={product.price}
