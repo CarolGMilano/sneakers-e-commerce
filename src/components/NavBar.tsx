@@ -19,7 +19,7 @@ export default function NavBar () {
 
   return (
     <nav 
-      className={`w-full h-screen absolute z-50 flex-col left-0 top-0 bg-[--beige] ${statusMenu ? 'flex' : 'hidden'} p-5 gap-5 lg:static lg:bg-transparent lg:w-auto lg:h-auto lg:flex-row lg:p-0 lg:gap-14 lg:flex`}>
+      className={`w-full h-screen fixed z-50 flex-col left-0 top-0 bg-[--beige] ${statusMenu ? 'flex' : 'hidden'} p-5 gap-5 lg:static lg:bg-transparent lg:w-auto lg:h-auto lg:flex-row lg:p-0 lg:gap-14 lg:flex`}>
       <Image 
         className="mb-8 w-[25px] h-auto lg:hidden" 
         src={CloseIcon} 
