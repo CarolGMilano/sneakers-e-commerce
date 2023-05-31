@@ -27,7 +27,7 @@ export default function ImageDialog ({ image }: IImageDialog) {
       <Dialog.Overlay className="fixed inset-0 bg-gray-800/70" />
       <div className="z-50 relative">
         <Image 
-          className="w-[25px] h-auto absolute -top-8 right-0" 
+          className="w-[25px] h-auto absolute -top-8 right-0 cursor-pointer" 
           src={CloseIcon} 
           alt="Close menu" 
           onClick={() => dispatch(closeImageDialog())} />
